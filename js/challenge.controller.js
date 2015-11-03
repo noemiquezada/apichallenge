@@ -20,5 +20,6 @@
         function register(credentials) {}
         console.log(ChallengeService.reverseString('cupcake'));
         console.log(ChallengeService.needleInAHaystack('cupcake', ['mayonaise', 'cake', 'oreos', 'red velvet cake', 'cupcake', 'cheerios', 'raspberries']));
+        
     }
 })();
