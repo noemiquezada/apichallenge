@@ -5,14 +5,19 @@
         .module('APIChallenge')
         .controller('ChallengeController', ChallengeController);
 
-    ChallengeController.$inject = [];
+    ChallengeController.$inject = ['ChallengeService'];
     
-    function ChallengeController() {
+    function ChallengeController(ChallengeService) {
         var vm = this;
         
         vm.credentials = {
             email: '',
-            url: '';
+            url: ''
         };
+        
+        vm.register = register;
+        
+        function register(credentials) {}
+        console.log(ChallengeService.reverseString('cupcake'));
     }
 })();
