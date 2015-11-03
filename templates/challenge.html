@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Hello</h1>
+    <form role="form" name="registrationForm" ng-submit="vm.register(vm.)">
+        <div class="form-group">
+            <label for="email">Code 2040 Email Address:</label>
+            <input ng-model="vm.credentials.email" type="email" class="form-control" id="email" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="url">Github Repository URL:</label>
+            <input ng-model="vm.credentials.url" type="url" class="form-control" id="url" required autofocus>
+        </div>
+        <button type="submit" class="btn btn-default" ng-disabled="registrationForm.$invalid">Submit</button>
+    </form>
+</div>
