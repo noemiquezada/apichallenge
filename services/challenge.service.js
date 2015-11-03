@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.reverseString = reverseString;
+        vm.needleInAHaystack = needleInAHaystack;
 
         function reverseString(str) {
             var reverseStr = '';
@@ -18,6 +19,14 @@
                 reverseStr += str[i];
             }
             return reverseStr;
+        }
+        
+        function needleInAHaystack(needle, haystack) {
+            for (var i = 0; i < haystack.length; i++) {
+                if (needle === haystack[i]) {
+                    return i; 
+                }
+            }
         }
     }
 })();
