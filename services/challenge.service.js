@@ -13,6 +13,7 @@
         vm.reverseString = reverseString;
         vm.needleInAHaystack = needleInAHaystack;
         vm.prefix = prefix;
+        vm.datingGame = datingGame;
 
         function reverseString(str) {
             var reverseStr = '';
@@ -49,6 +50,15 @@
             }
             // Return empty array
             return notPrefixedStrs; 
+        }
+        
+        function datingGame (datestamp, interval) {
+            // Create date object from datestamp
+            var datestampObject = new Date(datestamp);
+            // Add interval
+            datestampObject.setSeconds(datestampObject.getSeconds() + interval);
+            //return dateObject in ISO
+            return datestampObject.toISOString();
         }
     }
 })();
