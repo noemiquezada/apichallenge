@@ -3,11 +3,14 @@
     
     angular
         .module('APIChallenge')
-        .factory('Api', Api);
+        .factory('ApiRestangular', Api);
     
     Api.$inject = ['Restangular'];
     
     function Api (Restangular) {
+        
+        Restangular.setBaseUrl('http://challenge.code2040.org/api');
+
         var service = {
             register: register,
             getString: getString,
@@ -23,31 +26,31 @@
         return service;
         
         function register() {
-            return Restangular.service('register');
+            return Restangular.all('register');
         }
         
         function getString() {
-            return Restangular.service('getstring');
+            return Restangular.all('getstring');
         }
         
         function validateString() {
-            return Restangular.service('validatestring');
+            return Restangular.all('validatestring');
         }
         
         function haystack() {
-            return Restangular.service('haystack');
+            return Restangular.all('haystack');
         }
         
         function validateNeedle() {
-            return Restangular.service('validateneedle');
+            return Restangular.all('validateneedle');
         }
         
         function prefix() {
-            return Restangular.service('prefix');
+            return Restangular.all('prefix');
         }
         
         function validatePrefix() {
-            return Restangular.service('validateprefix');
+            return Restangular.all('validateprefix');
         }
         
         function time() {
@@ -55,7 +58,7 @@
         }
         
         function validateTime() {
-            return Restangular.service('validatetime');
+            return Restangular.all('validatetime');
         }
     }
     

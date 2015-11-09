@@ -5,20 +5,21 @@
         .module('APIChallenge')
         .factory('AuthService', AuthService);
     
-        AuthService.$inject = ['Session', 'Api']; 
+        AuthService.$inject = ['Session', 'ApiRestangular']; 
     
-        function AuthService (Session, Api) {
+        function AuthService (Session, ApiRestangular) {
             var authService = {
                 register: register 
             };
             
             function register(credentials){
-                
-                var apiRegister = Api.register; 
-                apiRegister.post(credentials).then(function(token) {
+                ApiRestangular.register().post(credentials).then(function(token) {
                     console.log("Registered");
-                    console.log("This is the token: " + token);
-                    Session.setToken(token); 
+                    console.log("This is the token: ");
+                    console.log(token);
+                    Session.setToken(token.result); 
+                }, function(error) {
+                    console.log(error);
                 });
             }
             
