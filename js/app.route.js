@@ -8,9 +8,6 @@
     function config ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: "templates/challenge.html",
-                controller: "ChallengeController",
-                controllerAs: 'vm'
             });
     }
 
