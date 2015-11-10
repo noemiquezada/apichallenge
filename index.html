@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylehseet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/challengeStyle.css">
-    <link rel="stylesheet" href="css/cloudStyle.css">
+    <!--    <link rel="stylesheet" href="css/cloudStyle.css">-->
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-10" ng-controller="WelcomeController as wc">
                 <div class="row">
-                    <div class="clouds" kj-clouds></div>
+                    <!--                    <div class="clouds" kj-clouds></div>-->
                     <div class="col-md-12">
                         <h1 class=" text-center">Welcome</h1>
                     </div>
@@ -29,12 +29,11 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
-            
             <div class="col-md-2">
             </div>
-            <div class="clouds" kj-clouds></div>
+            <!--            <div class="clouds" kj-clouds></div>-->
             <div class="col-md-10">
                 <div class="row">
                     <div class="col-md-12">
@@ -44,20 +43,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6" ng-controller="Stage1Controller as sc">
-                        <div ng-if="sc.messageCode == ''" class="alert alert-info" role="alert">Reverse a given string by pressing the <b>Try</b> button.</div>
-                        <div ng-if="sc.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc.message}}</div>
-                        <div ng-if="sc.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc.message}}</div>
-                        <div ng-if="sc.messageCode == 'success'" class="alert alert-success" role="alert">{{sc.message}}</div>
+                    <div class="col-md-6" ng-controller="Stage1Controller as sc1">
+                        <div ng-if="sc1.messageCode == ''" class="alert alert-info" role="alert">Reverse a given string by pressing the <b>Try</b> button.</div>
+                        <div ng-if="sc1.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc1.message}}</div>
+                        <div ng-if="sc1.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc1.message}}</div>
+                        <div ng-if="sc1.messageCode == 'success'" class="alert alert-success" role="alert">{{sc1.message}}</div>
                         <div class="form-group">
                             <label>Word</label>
-                            <input type="text" class="form-control" ng-model="sc.word" disabled></input>
+                            <input type="text" class="form-control" ng-model="sc1.word" disabled></input>
                         </div>
                         <div class="form-group">
                             <label>Reverse Word</label>
-                            <input type="text" class="form-control" ng-model="sc.reverseWord" disabled></input>
+                            <input type="text" class="form-control" ng-model="sc1.reverseWord" disabled></input>
                         </div>
-                        <button ng-click="sc.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+                        <button ng-click="sc1.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
                     </div>
                     <div class="col-md-6">
                         <h3>Code snippet</h3>
@@ -76,11 +75,66 @@ function reverseString(str) {
                 </div>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-md-12">
-                
+            <div class="col-md-2">
+            </div>
+            <!--            <div class="clouds" kj-clouds></div>-->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                            <h1>Stage 2 <small>Needle in a haystack</small></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" ng-controller="Stage2Controller as sc2">
+                        <div ng-if="sc2.messageCode == ''" class="alert alert-info" role="alert">Find the needle in the haystack by pressing the <b>Try</b> button.</div>
+                        <div ng-if="sc2.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc2.message}}</div>
+                        <div ng-if="sc2.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc2.message}}</div>
+                        <div ng-if="sc2.messageCode == 'success'" class="alert alert-success" role="alert">{{sc2.message}}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Needle</label>
+                                    <input type="text" class="form-control" ng-model="sc2.needle" disabled></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Haystack</label>
+                            <textarea type="text" class="form-control" rows="3" ng-model="sc2.haystack" disabled></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Needle Index</label>
+                                <input type="text" class="form-control" ng-model="sc2.index" disabled></input>
+                            </div>
+                        </div>
+                        <button ng-click="sc2.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Code snippet</h3>
+                        <pre>
+function needleInAHaystack(needle, haystack) {
+    // Search for needle string in haystack 
+    for (var i = 0; i < haystack.length; i++) {
+        // If needle is found in haystack return index
+        if (needle === haystack[i]) {
+            return i; 
+        }
+    }
+    // Else return 01
+    return -1;
+}
+                        </pre>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
     <!-- Resources -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -98,6 +152,7 @@ function reverseString(str) {
     <script src="app.constants.js"></script>
     <script src="js/welcome.controller.js"></script>
     <script src="js/stage1.controller.js"></script>
+    <script src="js/stage2.controller.js"></script>
     <script src="services/challenge.service.js"></script>
     <script src="directives/cloud.directive.js"></script>
     <script src="services/api.service.js"></script>

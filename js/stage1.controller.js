@@ -8,13 +8,13 @@
     Stage1Controller.$inject = ['ApiRestangular', 'Session', 'ChallengeService'];
 
     function Stage1Controller(ApiRestangular, Session, ChallengeService) {
-        var sc = this;
+        var sc1 = this;
 
-        sc.message = '';
-        sc.messageCode = '';
-        sc.word = '';
-        sc.reverseWord = '';
-        sc.tryButton = tryButton;
+        sc1.message = '';
+        sc1.messageCode = '';
+        sc1.word = '';
+        sc1.reverseWord = '';
+        sc1.tryButton = tryButton;
 
         function tryButton() {
             var o = {};
@@ -22,31 +22,31 @@
             console.log("This is o");
             console.log(o);
             if (o.token == undefined) {
-                sc.message = "Error Validating";
-                sc.messagecode = "danger";
+                sc1.message = "Error Validating";
+                sc1.messagecode = "danger";
             } else {
-                sc.message = "Fetching word";
-                sc.messageCode = "warning";
+                sc1.message = "Fetching word";
+                sc1.messageCode = "warning";
                 ApiRestangular.getString().post(o).then(function (str) {
-                    sc.message = 'Fetched Word';
-                    sc.messageCode = "success";
-                    sc.word = str.result;
-                    sc.message = "Reversing String"
-                    sc.messageCode = "warning";
-                    sc.reverseWord = ChallengeService.reverseString(sc.word);
-                    o.string = sc.reverseWord;
-                    sc.messageCode = "warning";
-                    sc.message = "Validating String";
+                    sc1.message = 'Fetched Word';
+                    sc1.messageCode = "success";
+                    sc1.word = str.result;
+                    sc1.message = "Reversing String"
+                    sc1.messageCode = "warning";
+                    sc1.reverseWord = ChallengeService.reverseString(sc1.word);
+                    o.string = sc1.reverseWord;
+                    sc1.messageCode = "warning";
+                    sc1.message = "Validating String";
                     console.log('this is o now'); 
                     console.log(o);
                     ApiRestangular.validateString().post(o).then(function (str) {
                         console.log("I am in here");
                         console.log(str);
-                        sc.messageCode = "success";
-                        sc.message = "String Validated";
+                        sc1.messageCode = "success";
+                        sc1.message = "String Validated";
                     }, function (error) {
-                        sc.message = "Error Validating";
-                        sc.messagecode = "danger";
+                        sc1.message = "Error Validating";
+                        sc1.messagecode = "danger";
                     });
                 });
             }
