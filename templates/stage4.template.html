@@ -1,0 +1,62 @@
+<div class="row">
+            <div class="col-md-2">
+            </div>
+            <!--            <div class="clouds" kj-clouds></div>-->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                            <h1>Stage 4 <small>The dating game</small></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" ng-controller="Stage4Controller as sc4">
+                        <div ng-if="sc4.messageCode == ''" class="alert alert-info" role="alert">Create new datestamp by pressing the <b>Try</b> button.</div>
+                        <div ng-if="sc4.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc4.message}}</div>
+                        <div ng-if="sc4.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc4.message}}</div>
+                        <div ng-if="sc4.messageCode == 'success'" class="alert alert-success" role="alert">{{sc4.message}}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Datestamp</label>
+                                    <input type="datetime" class="form-control" ng-model="sc4.datestamp" disabled></input>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Interval (secs)</label>
+                                    <input type="text" class="form-control" ng-model="sc4.interval" disabled></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Datestamp + Interval</label>
+                            <input type="datetime" class="form-control" rows="3" ng-model="sc4.newDatestamp" disabled></input>
+                        </div>
+                            <button ng-click="sc4.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+                    </div>
+                        
+                    <div class="col-md-6">
+                        <h3>Code snippet</h3>
+                        <pre>
+function prefix(prfx, strs) {
+    // Empty array
+    var notPrefixedStrs = [];
+    // Loop through array of strings
+    for (var i = 0; i < strs.length; i++) {
+        // If a string starts with prfx ignore
+        if (strs[i].search(prfx) != 0) {
+            // Append to empty array
+            notPrefixedStrs.push(strs[i]);
+        }
+    }
+    // Return empty array
+    return notPrefixedStrs; 
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>

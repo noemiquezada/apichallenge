@@ -54,7 +54,7 @@
         }
         
         function time() {
-            return Restangular.service('time');
+            return Restangular.all('time');
         }
         
         function validateTime() {
