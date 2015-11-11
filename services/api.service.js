@@ -1,3 +1,8 @@
+/* 
+Name: ApiRestangular Service
+Description: Decoupling Restangular Service from Controllers by creating custom service to hide Restangular object from anywhere. This ApiRestangular service also configures the Restangular service to point the code2040. 
+*/
+
 (function() {
     'use strict';
     
