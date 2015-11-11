@@ -17,7 +17,6 @@
                 email: API_CONSTANTS.email,
                 github: API_CONSTANTS.github
             };
-            console.log("I am in start");
             AuthService.register(credentials);
         }
     }

@@ -19,8 +19,6 @@
         function tryButton() {
             var o = {};
             o.token = Session.getToken();
-            console.log("This is o");
-            console.log(o);
             if (o.token == undefined) {
                 sc1.message = "Error Validating";
                 sc1.messagecode = "danger";
@@ -37,11 +35,7 @@
                     o.string = sc1.reverseWord;
                     sc1.messageCode = "warning";
                     sc1.message = "Validating String";
-                    console.log('this is o now'); 
-                    console.log(o);
                     ApiRestangular.validateString().post(o).then(function (str) {
-                        console.log("I am in here");
-                        console.log(str);
                         sc1.messageCode = "success";
                         sc1.message = "String Validated";
                     }, function (error) {

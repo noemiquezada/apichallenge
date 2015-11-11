@@ -31,8 +31,6 @@
                 ApiRestangular.time().post(o).then(function (r) {
                     sc4.message = 'Fetched datestamp and interval';
                     sc4.messageCode = "success";
-                    console.log("I am fetching");
-                    console.log(r);
                     sc4.datestamp = r.result.datestamp;
                     sc4.interval = r.result.interval;
                     sc4.message = "Finding new datestamp"
@@ -41,15 +39,10 @@
                     o.datestamp = sc4.newDatestamp;
                     sc4.messageCode = "warning";
                     sc4.message = "Validating new datestamp";
-                    console.log('this is o now'); 
-                    console.log(o);
                     ApiRestangular.validateTime().post(o).then(function (i) {
-                        console.log("I am in here");
-                        console.log(i);
                         sc4.messageCode = "success";
                         sc4.message = "DateTime + Interval Validated";
                     }, function (error) {
-                        console.log(error);
                         sc4.message = "Error Validating";
                         sc4.messagecode = "danger";
                     });
