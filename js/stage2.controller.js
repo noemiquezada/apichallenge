@@ -43,7 +43,7 @@
                     sc2.message = "Validating Needle";
                     console.log('this is o now'); 
                     console.log(o);
-                    ApiRestangular.validateString().post(o).then(function (i) {
+                    ApiRestangular.validateNeedle().post(o).then(function (i) {
                         console.log("I am in here");
                         console.log(i);
                         sc2.messageCode = "success";

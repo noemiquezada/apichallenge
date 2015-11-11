@@ -1,0 +1,60 @@
+<div class="row">
+            <div class="col-md-2">
+            </div>
+            <!--            <div class="clouds" kj-clouds></div>-->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                            <h1>Stage 3 <small>Prefix</small></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" ng-controller="Stage3Controller as sc3">
+                        <div ng-if="sc3.messageCode == ''" class="alert alert-info" role="alert">Find the strings that do not start with the given prefix by pressing the <b>Try</b> button.</div>
+                        <div ng-if="sc3.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc3.message}}</div>
+                        <div ng-if="sc3.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc3.message}}</div>
+                        <div ng-if="sc3.messageCode == 'success'" class="alert alert-success" role="alert">{{sc3.message}}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Prefix</label>
+                                    <input type="text" class="form-control" ng-model="sc3.prefix" disabled></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Haystack</label>
+                            <textarea type="text" class="form-control" rows="3" ng-model="sc3.array" disabled></textarea>
+                        </div>
+                        <div class="form-group">
+                                <label>Strings not prefixed with {{sc3.prefix}}</label>
+                                <textarea type="text" class="form-control" rows="3" ng-model="sc3.resultArray" disabled></textarea>
+                        </div>
+                            <button ng-click="sc3.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+                    </div>
+                        
+                    <div class="col-md-6">
+                        <h3>Code snippet</h3>
+                        <pre>
+function prefix(prfx, strs) {
+    // Empty array
+    var notPrefixedStrs = [];
+    // Loop through array of strings
+    for (var i = 0; i < strs.length; i++) {
+        // If a string starts with prfx ignore
+        if (strs[i].search(prfx) != 0) {
+            // Append to empty array
+            notPrefixedStrs.push(strs[i]);
+        }
+    }
+    // Return empty array
+    return notPrefixedStrs; 
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>

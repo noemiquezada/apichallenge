@@ -12,128 +12,10 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-10" ng-controller="WelcomeController as wc">
-                <div class="row">
-                    <!--                    <div class="clouds" kj-clouds></div>-->
-                    <div class="col-md-12">
-                        <h1 class=" text-center">Welcome</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 text-center">
-                        <button ng-click="wc.start()" type="submit" class="btn btn-success btn-lg">Start</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <!--            <div class="clouds" kj-clouds></div>-->
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-header">
-                            <h1>Stage 1 <small>Reverse a String</small></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6" ng-controller="Stage1Controller as sc1">
-                        <div ng-if="sc1.messageCode == ''" class="alert alert-info" role="alert">Reverse a given string by pressing the <b>Try</b> button.</div>
-                        <div ng-if="sc1.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc1.message}}</div>
-                        <div ng-if="sc1.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc1.message}}</div>
-                        <div ng-if="sc1.messageCode == 'success'" class="alert alert-success" role="alert">{{sc1.message}}</div>
-                        <div class="form-group">
-                            <label>Word</label>
-                            <input type="text" class="form-control" ng-model="sc1.word" disabled></input>
-                        </div>
-                        <div class="form-group">
-                            <label>Reverse Word</label>
-                            <input type="text" class="form-control" ng-model="sc1.reverseWord" disabled></input>
-                        </div>
-                        <button ng-click="sc1.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Code snippet</h3>
-                        <pre>
-function reverseString(str) {
-    var reverseStr = '';
-    // Starting from the back to the front
-    for (var i = str.length - 1; i > -1; i--) {
-        // Append to new string
-        reverseStr += str[i];
-    }
-    return reverseStr;
-}
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <!--            <div class="clouds" kj-clouds></div>-->
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-header">
-                            <h1>Stage 2 <small>Needle in a haystack</small></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6" ng-controller="Stage2Controller as sc2">
-                        <div ng-if="sc2.messageCode == ''" class="alert alert-info" role="alert">Find the needle in the haystack by pressing the <b>Try</b> button.</div>
-                        <div ng-if="sc2.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc2.message}}</div>
-                        <div ng-if="sc2.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc2.message}}</div>
-                        <div ng-if="sc2.messageCode == 'success'" class="alert alert-success" role="alert">{{sc2.message}}</div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Needle</label>
-                                    <input type="text" class="form-control" ng-model="sc2.needle" disabled></input>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Haystack</label>
-                            <textarea type="text" class="form-control" rows="3" ng-model="sc2.haystack" disabled></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Needle Index</label>
-                                <input type="text" class="form-control" ng-model="sc2.index" disabled></input>
-                            </div>
-                        </div>
-                        <button ng-click="sc2.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Code snippet</h3>
-                        <pre>
-function needleInAHaystack(needle, haystack) {
-    // Search for needle string in haystack 
-    for (var i = 0; i < haystack.length; i++) {
-        // If needle is found in haystack return index
-        if (needle === haystack[i]) {
-            return i; 
-        }
-    }
-    // Else return 01
-    return -1;
-}
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div ng-include="'templates/welcome.template.html'"></div>
+        <div ng-include="'templates/stage1.template.html'"></div>
+        <div ng-include="'templates/stage2.template.html'"></div>
+        <div ng-include="'templates/stage3.template.html'"></div>
 
     </div>
     <!-- Resources -->
@@ -153,6 +35,7 @@ function needleInAHaystack(needle, haystack) {
     <script src="js/welcome.controller.js"></script>
     <script src="js/stage1.controller.js"></script>
     <script src="js/stage2.controller.js"></script>
+    <script src="js/stage3.controller.js"></script>
     <script src="services/challenge.service.js"></script>
     <script src="directives/cloud.directive.js"></script>
     <script src="services/api.service.js"></script>
