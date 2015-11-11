@@ -41,19 +41,13 @@
                     <div class="col-md-6">
                         <h3>Code snippet</h3>
                         <pre>
-function prefix(prfx, strs) {
-    // Empty array
-    var notPrefixedStrs = [];
-    // Loop through array of strings
-    for (var i = 0; i < strs.length; i++) {
-        // If a string starts with prfx ignore
-        if (strs[i].search(prfx) != 0) {
-            // Append to empty array
-            notPrefixedStrs.push(strs[i]);
-        }
-    }
-    // Return empty array
-    return notPrefixedStrs; 
+function datingGame (datestamp, interval) {
+    // Create date object from datestamp
+    var datestampObject = new Date(datestamp);
+    // Add interval
+    datestampObject.setSeconds(datestampObject.getSeconds() + interval);
+    //return dateObject in ISO
+    return datestampObject.toISOString();
 }
                         </pre>
                     </div>

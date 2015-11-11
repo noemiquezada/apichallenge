@@ -10,7 +10,7 @@
     function WelcomeController(API_CONSTANTS, AuthService) {
         var wc = this;
         
-        wc.start = start;
+        start();
         
         function start() {
             var credentials = {
