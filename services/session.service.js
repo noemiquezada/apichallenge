@@ -1,3 +1,8 @@
+/* 
+Name: Session Service
+Description: Service that creates an abstraction for registration and access to sessionStorage, which houses the token that is used in all Api requests. 
+*/
+
 (function(){
     "use strict";
     
