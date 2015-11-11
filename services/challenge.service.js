@@ -1,3 +1,11 @@
+/* 
+Name: Challenge Service
+Description: Service that houses methods that map to the stages of the API Challenge.
+Stage 1 : Reverse a String
+Stage 2 : Needle in a Haystack
+Stage 3 : Prefix
+Stage 4 : The Dating Game
+*/
 (function () {
     'use strict';
 
@@ -15,6 +23,7 @@
         vm.prefix = prefix;
         vm.datingGame = datingGame;
 
+        // Stage 1
         function reverseString(str) {
             var reverseStr = '';
             // Starting from the back to the front
@@ -25,6 +34,7 @@
             return reverseStr;
         }
         
+        // Stage 2
         function needleInAHaystack(needle, haystack) {
             // Search for needle string in haystack 
             for (var i = 0; i < haystack.length; i++) {
@@ -37,6 +47,7 @@
             return -1;
         }
         
+        // Stage 3
         function prefix(prfx, strs) {
             // Empty array
             var notPrefixedStrs = [];
@@ -52,6 +63,7 @@
             return notPrefixedStrs; 
         }
         
+        // Stage 4
         function datingGame (datestamp, interval) {
             // Create date object from datestamp
             var datestampObject = new Date(datestamp);
