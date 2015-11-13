@@ -17,13 +17,13 @@ My rough blueprint followed a lose approach of the MVC (Model-View-Controller) f
 
 The first service I created was the Challenge Service since my main concern in this challenge was to be able to implement the certain algorithms needed to pass each stage (i.e. reverse a string, find the needle in the haystack). I used console statements (tests/challenge.controller.js) to test that the algorithms worked before proceding on implementing any other aspect of the challenge. I would like to point out that the solutions presented are not the most optimal, it was the first solution that I was able to craft. My focus in this project was mostly completion instead of optimization. 
 
-Once I had verified that the algorithms produced valid results, I began implementing the service that would interface with the Code2040Challenge API by focusing on registration and retrieving the token needed to submit the challenges. I used [**Restangular **](https://github.com/mgonto/restangular) service to simplify the communication with the Server. 
+Once I had verified that the algorithms produced valid results, I began implementing the service that would interface with the Code2040Challenge API by focusing on registration and retrieving the token needed to submit the challenges. I used [**Restangular**](https://github.com/mgonto/restangular) service to simplify the communication with the Server. 
 
 I used the browsers sessionStorage [**NgStorage**](https://github.com/gsklee/ngStorage) to store the token retrieved upon registration and created Session Storage so that it could interface with the browsers Session Storage. 
 
 Once I was able to communicate with the server via the API, I began implemented Stage 1 template (templates/stage1.template.html) and controller (controllers/stage1.controller.js) and followed with implementing the other stages. 
 
-**Full List of Services Created **
+**Full List of Services Created**
 
 * Challenge Service - Service that houses methods that map to the stages of the API Challenge.
 * API Service - Decoupled Restangular Service from Controllers by creating custom service to hide Restangular object from anywhere. This ApiRestangular service also configures the Restangular service to point the code2040. 
