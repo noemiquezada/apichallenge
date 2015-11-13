@@ -1,6 +1,9 @@
 # Code 2040 API Challenge
 This is my AngularJS one page app solution to the Code 2040 API Challenge 2015-2016. 
 
+## Usage
+Just clone this repository and fire up index.html in a browser(make sure you have internet connection) and Voila! :) 
+
 ## Challenge
 The API Challenge consisted of four stages: 
 
