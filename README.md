@@ -11,11 +11,11 @@ The API Challenge consisted of four stages:
 
 ## My Approach
 
-I took an incremental approach to the challenge. I started by reviewing and analyzing the different stages of the challenge, what was required (i.e. registration, passsing a token along with each request, using POST method to communicate with server) and created a blueprint of what I needed to implement before writing any code. I also put some thought on what AngularJS modules I could use to help with t
+I took an incremental approach to the challenge. I started by reviewing and analyzing the different stages of the challenge, what was required (i.e. registration, passsing a token along with each request, using POST method to communicate with server) and created a blueprint of what I needed to implement before writing any code. I also put some thought on what AngularJS modules I could use to help with.
 
 My rough blueprint followed a lose approach of the MVC (Model-View-Controller) framework. I created various Angular JS services (listed below) that encapsulated certain logic. 
 
-The first service I created was the Challenge Service since my main concern in this challenge was to be able to implement the certain algorithms needed to pass each stage (i.e. reverse a string, find the needle in the haystack). I used console statements (tests/challenge.controller.js) to test that the algorithms worked before proceding on implementing any other aspect of the challenge. 
+The first service I created was the Challenge Service since my main concern in this challenge was to be able to implement the certain algorithms needed to pass each stage (i.e. reverse a string, find the needle in the haystack). I used console statements (tests/challenge.controller.js) to test that the algorithms worked before proceding on implementing any other aspect of the challenge. I would like to point out that the solutions presented are not the most optimal, it was the first solution that I was able to craft. My focus in this project was mostly completion instead of optimization. 
 
 Once I had verified that the algorithms produced valid results, I began implementing the service that would interface with the Code2040Challenge API by focusing on registration and retrieving the token needed to submit the challenges. I used [**Restangular **](https://github.com/mgonto/restangular) service to simplify the communication with the Server. 
 
@@ -31,6 +31,11 @@ Once I was able to communicate with the server via the API, I began implemented 
 * Authorization Service - Service that interfaces with the Api to register a user upon page load. 
 
 ## Improvements
-Due to time constraints, as of now, this is a one page application that fetches from a cdn source for both javascript and css libraries and modules. If I had a little more time I would have used services such as gulp and bower to help manage and enhance my workflow wiht all libraries and assets. I would also take the time to improve the user interface as of now it is just using Bootstrap to provide structure and some color. 
+Due to time constraints, as of now, this is a one page application that fetches from a cdn source for both javascript and css libraries and modules. If I had a little more time I would have used services such as gulp and bower to help manage and enhance my workflow wiht all libraries and assets. I would also take the time to improve the user interface as of now it is just using Bootstrap to provide structure and some color.
 
 ## Screenshots
+![Stage 1 - Reverse a String Initial](screenshots/reverseStringInitial.png "Stage 1 - Reverse a String Initial View")
+![Stage 1 - Reverse a String Validating](screenshots/reverseStringValidating.png "Stage 1 - Reverse a String Validating String View")
+![Stage 1 - Reverse a String Validated](screenshots/reverseStringValidated.png "Stage 1 - Reverse a String String Validated View")
+![Stage 2 - Needle in a Haystack Initial](screenshots/reverseStringInitial.png "Stage 2 - Needle in a Haystack Initial View")
+![Stage 2 - Needle in a Haystack Validated](screenshots/reverseStringValidated.png "Stage 2 - Needle in a Haystack Needle Position Validated View")
