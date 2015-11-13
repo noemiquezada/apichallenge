@@ -1,3 +1,5 @@
+/* Constants Used in this project */
+
 (function() {
     'use strict';
     

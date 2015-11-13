@@ -1,3 +1,5 @@
+/* Configuration for the routing of APIChallenge One Page Application */
+
 (function() {
     angular
         .module('APIChallenge')

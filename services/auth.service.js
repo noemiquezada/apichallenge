@@ -1,3 +1,8 @@
+/* 
+Name: AuthService Service
+Description: Service that interfaces with the Api to register a user upon page load. 
+*/
+
 (function() {
     "use strict";
      
