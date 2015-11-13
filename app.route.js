@@ -1,3 +1,5 @@
+/* Configuration for the routing of APIChallenge One Page Application */
+
 (function() {
     angular
         .module('APIChallenge')
@@ -8,9 +10,6 @@
     function config ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: "templates/challenge.html",
-                controller: "ChallengeController",
-                controllerAs: 'vm'
             });
     }
 

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Stage 1 <small>Reverse a String</small></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-controller="Stage1Controller as sc1">
+                <div ng-if="sc1.messageCode == ''" class="alert alert-info" role="alert">Reverse a given string by pressing the <b>Try</b> button.</div>
+                <div ng-if="sc1.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc1.message}}</div>
+                <div ng-if="sc1.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc1.message}}</div>
+                <div ng-if="sc1.messageCode == 'success'" class="alert alert-success" role="alert">{{sc1.message}}</div>
+                <div class="form-group">
+                    <label>Word</label>
+                    <input type="text" class="form-control" ng-model="sc1.word" disabled></input>
+                </div>
+                <div class="form-group">
+                    <label>Reverse Word</label>
+                    <input type="text" class="form-control" ng-model="sc1.reverseWord" disabled></input>
+                </div>
+                <button ng-click="sc1.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Code snippet</h3>
+                <pre>
+function reverseString(str) {
+    var reverseStr = '';
+    // Starting from the back to the front
+    for (var i = str.length - 1; i > -1; i--) {
+        // Append to new string
+        reverseStr += str[i];
+    }
+    return reverseStr;
+}
+                        </pre>
+            </div>
+        </div>
+    </div>
+</div>

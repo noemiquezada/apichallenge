@@ -1,0 +1,55 @@
+<div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                            <h1>Stage 2 <small>Needle in a haystack</small></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" ng-controller="Stage2Controller as sc2">
+                        <div ng-if="sc2.messageCode == ''" class="alert alert-info" role="alert">Find the needle in the haystack by pressing the <b>Try</b> button.</div>
+                        <div ng-if="sc2.messageCode == 'warning'" class="alert alert-warning" role="alert">{{sc2.message}}</div>
+                        <div ng-if="sc2.messageCode == 'danger'" class="alert alert-danger" role="alert">{{sc2.message}}</div>
+                        <div ng-if="sc2.messageCode == 'success'" class="alert alert-success" role="alert">{{sc2.message}}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Needle</label>
+                                    <input type="text" class="form-control" ng-model="sc2.needle" disabled></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Haystack</label>
+                            <textarea type="text" class="form-control" rows="3" ng-model="sc2.haystack" disabled></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Needle Index</label>
+                                <input type="text" class="form-control" ng-model="sc2.index" disabled></input>
+                            </div>
+                        </div>
+                        <button ng-click="sc2.tryButton()" class="center-block btn btn-success btn-lg">Try</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Code snippet</h3>
+                        <pre>
+function needleInAHaystack(needle, haystack) {
+    // Search for needle string in haystack 
+    for (var i = 0; i < haystack.length; i++) {
+        // If needle is found in haystack return index
+        if (needle === haystack[i]) {
+            return i; 
+        }
+    }
+    // Else return 01
+    return -1;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
